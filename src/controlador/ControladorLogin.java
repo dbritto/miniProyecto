@@ -10,7 +10,6 @@ import modelo.EmpleadoDao;
 import vista.Login;
 import vista.VistaRegistroPrenda;
 import vista.VistaSupervisor;
-import vista.VistaTecnico;
 import vista.VistaVendedor;
 
 public class ControladorLogin implements ActionListener{
@@ -37,7 +36,10 @@ public class ControladorLogin implements ActionListener{
            String especialidad = usuario.get("especialidad");   
           
             if ("tecnico".equals(especialidad)) { 
+                
                 VistaRegistroPrenda vistaTecnico = new VistaRegistroPrenda(); 
+                ControladorVistaRegistroPrenda c = new ControladorVistaRegistroPrenda(vistaTecnico);
+                c.cargarPaneles();
                 vistaTecnico.setVisible(true);
             }else if ("vendedor".equals(especialidad)) { 
                VistaVendedor vistaVendedor = new VistaVendedor();

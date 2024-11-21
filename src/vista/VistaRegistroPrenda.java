@@ -21,14 +21,13 @@ import javax.swing.JScrollPane;
 public class VistaRegistroPrenda extends JFrame{
     public Container contenedor;
     
-    private JLabel tituIngresadas,tituEsperInsu,tituReparacion,tituRevision,tituEntrega;
+    public JLabel tituIngresadas,tituEsperInsu,tituReparacion,tituRevision,tituEntrega;
     
-    public JPanel botones,principal,ingresadas,esperaInsumos,enReparacion,revision,entrega;
+    public JPanel botones,principal,ingresadas,esperaInsumos,
+            enReparacion,revision,entrega;
     
-    public JButton registroPrenda,RegistroCliente,actualizarEstado;
+    public JButton registroPrenda,RegistroCliente;
     
-    public ArrayList<JButton> listaIngresadas,listaEsperaInsumos,listaReparacion,listaRevision,listaEntrega;
-  
     public FlowLayout flow_princi,flow_boton;
     
     public VistaRegistroPrenda(){
@@ -50,20 +49,11 @@ public class VistaRegistroPrenda extends JFrame{
         //Creamos los botones
         registroPrenda = new JButton();
         RegistroCliente = new JButton();
-        actualizarEstado = new JButton();
-        
+ 
         registroPrenda.setText("Registrar Prenda");
         RegistroCliente.setText("Nuevo Cliente");
-        actualizarEstado.setText("Actualizar estado Prenda");
    
         
-        //Creamos las listas donde se van a cargar los datos de la consulta sql
-        
-        listaIngresadas = new ArrayList<>();
-        listaEsperaInsumos = new ArrayList<>();
-        listaReparacion = new ArrayList<>();
-        listaRevision = new ArrayList<>();
-        listaEntrega = new ArrayList<>();
         
         //creamos los paneles que vamos a utilizar
         
@@ -113,7 +103,6 @@ public class VistaRegistroPrenda extends JFrame{
         //agregamos cosas a los paneles principales
         botones.add(RegistroCliente);
         botones.add(registroPrenda);
-        botones.add(actualizarEstado);
         
         
         principal.add(Box.createRigidArea(new Dimension(0, 10))); 
@@ -146,13 +135,7 @@ public class VistaRegistroPrenda extends JFrame{
         revision.add(tituRevision);
         entrega.add(tituEntrega);
         
-        
-        for (int i = 0; i < 100; i++) {
-              
-                JButton prueba = new JButton("Daniel"+"\n"+"1.500");
-                ingresadas.add(prueba);
-        }
-    
+  
         
         
         botones.setPreferredSize(new Dimension(1366, 70));
